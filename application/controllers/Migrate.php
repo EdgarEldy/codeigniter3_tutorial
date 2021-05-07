@@ -9,6 +9,13 @@ class Migrate extends CI_Controller
     {
         parent::__construct();
         //Do your magic here
+
+        //Load migration library
+        if (!$this->input->is_cli_request()) {
+            show_error('You don\'t have permission for this action');
+            return;
+        }
+        $this->load->library('migration');
     }
 
 

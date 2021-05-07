@@ -18,6 +18,18 @@ class Migrate extends CI_Controller
         $this->load->library('migration');
     }
 
+    //Checking out migration version
+    public function version($version)
+    {
+        $migration = $this->migration->version($version);
+        if (!$migration) {
+            echo $this->migration->error_string();
+        } else {
+            echo 'Migration done' . PHP_EOL;
+        }
+    }
+
+
 
     public function index()
     {

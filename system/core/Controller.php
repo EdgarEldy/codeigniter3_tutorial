@@ -100,4 +100,21 @@ class CI_Controller {
 		return self::$instance;
 	}
 
+	//Initialize layout 
+	var $template_data = array();
+
+	//Set content and view
+    function set($content_area, $value)
+    {
+        $this->template_data[$content_area] = $value;
+    }
+
+	//Rendering layout, content name, view and data
+    function render($template = '', $name ='', $view = '' , $view_data = array(), $return = FALSE)
+    {
+        $this->set($name , $this->load->view($view, $view_data, TRUE));
+
+        $this->load->view($template, $this->template_data);
+    }
+
 }

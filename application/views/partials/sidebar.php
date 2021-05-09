@@ -6,8 +6,8 @@
         <li><a href=""><svg class="glyph stroked bag">
                     <use xlink:href="#stroked-bag"></use>
                 </svg> Orders</a></li>
-        <li><a href="#"><svg class="glyph stroked user">
-                    <use xlink:href="#stroked-user"></use>
+        <li><a href="#"><svg class="glyph stroked app-window-with-content">
+                    <use xlink:href="#stroked-app-window-with-content"></use>
                 </svg> Customers</a></li>
         <li><a href="#"><svg class="glyph stroked clock">
                     <use xlink:href="#stroked-clock"></use>

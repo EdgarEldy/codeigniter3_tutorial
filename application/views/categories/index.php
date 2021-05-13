@@ -15,7 +15,7 @@
                     <?php foreach ($categories as $category) : ?>
                         <tr>
                             <td><?= $category['id'] ?> </td>
-                            <td><?= $category[['category_name']] ?></td>
+                            <td><?= $category['category_name'] ?></td>
                             <td>
                                 <div class="card-footer">
                                     <a href="<?= base_url('categories/edit/' . $category['id']) ?>" class="btn btn-primary">Edit</a>

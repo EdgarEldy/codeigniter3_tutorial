@@ -18,12 +18,22 @@ class Category extends CI_Model
         $this->db->select('*');
         $this->db->from('categories');
         $query = $this->db->get();
-        
+
         return $query->result_array();
-        
     }
 
+    // Insert a product category
+    public function add()
+    {
+        //Product data array
+        $data = array(
+            'category_name' => $this->input->post('category_name')
+        );
 
+        //Insert product category
+        return $this->db->insert('categories', $data);
+        
+    }
 }
 
 /* End of file Category.php */

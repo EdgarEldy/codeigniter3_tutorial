@@ -20,6 +20,28 @@ class Categories extends CI_Controller
         $data['categories'] = $this->Category->getCategories();
         return $this->render('templates/default', 'content', 'categories/index', $data);
     }
+
+    //Add a product category
+    public function add()
+    {
+        //Setting validation rules
+        $this->form_validation->set_rules('category_name', 'Category name', 'required');
+
+
+        if ($this->form_validation->run() == FALSE) {
+            return $this->render('templates/default', 'content', 'categories/add');
+        } else {
+            //Save product category
+            $this->Category->add();
+            
+            //Set flash message
+            $this->session->set_flashdata('category_saved', 'Product category has been saved successfully !');
+
+            //Load categories/index view
+            return redirect('categories');
+            
+        }
+    }
 }
 
 /* End of file Categories.php */

@@ -42,6 +42,16 @@ class Category extends CI_Model
         ));
         return $query->row_array();
     }
+
+    //Update a product category
+    public function update_category()
+    {
+        $data = array(
+            'category_name' => $this->input->post('category_name')
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('categories', $data);
+    }
 }
 
 /* End of file Category.php */

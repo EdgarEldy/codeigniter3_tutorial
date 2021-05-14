@@ -32,7 +32,15 @@ class Category extends CI_Model
 
         //Insert product category
         return $this->db->insert('categories', $data);
-        
+    }
+
+    //Get product category data by id
+    public function edit_category($id)
+    {
+        $query = $this->db->get_where('categories', array(
+            'id' => $id
+        ));
+        return $query->row_array();
     }
 }
 

@@ -56,6 +56,18 @@ class Categories extends CI_Controller
         $this->session->set_flashdata('category_updated', 'Product category has been updated successfully !');
         redirect('categories');
     }
+
+    //Delete a product category
+    public function delete($id)
+    {
+        $this->Category->delete_category($id);
+
+        // Set message
+        $this->session->set_flashdata('category_deleted', 'Product category has been removed successfully !');
+
+        redirect('categories');
+
+    }
 }
 
 /* End of file Categories.php */

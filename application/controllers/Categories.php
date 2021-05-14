@@ -48,6 +48,14 @@ class Categories extends CI_Controller
         $data['category'] = $this->Category->edit_category($id);
         $this->render('templates/default', 'content', 'categories/edit', $data);
     }
+
+    //Update a product category
+    public function update()
+    {
+        $this->Category->update_category();
+        $this->session->set_flashdata('category_updated', 'Product category has been updated successfully !');
+        redirect('categories');
+    }
 }
 
 /* End of file Categories.php */

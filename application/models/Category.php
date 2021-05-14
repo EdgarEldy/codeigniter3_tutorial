@@ -52,6 +52,15 @@ class Category extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('categories', $data);
     }
+
+    //Delete a product category
+    public function delete_category($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('categories');
+        return true;
+    }
+
 }
 
 /* End of file Category.php */

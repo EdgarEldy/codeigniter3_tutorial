@@ -33,14 +33,20 @@ class Categories extends CI_Controller
         } else {
             //Save product category
             $this->Category->add();
-            
+
             //Set flash message
             $this->session->set_flashdata('category_saved', 'Product category has been saved successfully !');
 
             //Load categories/index view
             return redirect('categories');
-            
         }
+    }
+
+    //Show the form for editing a product category
+    public function edit($id)
+    {
+        $data['category'] = $this->Category->edit_category($id);
+        $this->render('templates/default', 'content', 'categories/edit', $data);
     }
 }
 

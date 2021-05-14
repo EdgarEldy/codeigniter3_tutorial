@@ -20,7 +20,7 @@
                                 <div class="card-footer">
                                     <a href="<?= base_url('categories/edit/' . $category['id']) ?>" class="btn btn-primary">Edit</a>
                                     <form action="<?= base_url('categories/delete/' . $category['id']) ?>" method="post">
-                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this category ?')" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this product category ?')" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
                                 </div>
                             </td>

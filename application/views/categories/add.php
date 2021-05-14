@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <label>Category name :</label>
                         <input type="text" name="category_name" class="form-control" class="is-danger" placeholder="" value="">
-                        <?= form_error('last_name', '<p class="alert alert-danger">', '</p>') ?>
+                        <?= form_error('category_name', '<p class="alert alert-danger">', '</p>') ?>
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary">Save</button>
                     <button type="reset" class="btn btn-default">Reset</button>

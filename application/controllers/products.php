@@ -13,8 +13,11 @@ class products extends CI_Controller
     }
 
 
+    //Show all products to the view
     public function index()
     {
+        $data['products'] = $this->Product->getProducts();
+        return $this->render('templates/default', 'content', 'products/index', $data);
     }
 }
 

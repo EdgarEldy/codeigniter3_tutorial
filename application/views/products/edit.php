@@ -9,6 +9,7 @@
           <div class="panel-body">
               <div class="col-md-6">
                   <form role="form" action="<?= base_url('products/update') ?>" method="post">
+                      <input type="hidden" name="id" value="<?= $product['id'] ?>">
                       <div class="form-group">
                           <label>Category name :</label>
                           <select name="category_id" id="" class="form-control">

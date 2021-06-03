@@ -64,6 +64,17 @@ class Products extends CI_Controller
         $this->session->set_flashdata('product_updated', 'Product has been updated successfully !');
         redirect('products');
     }
+
+    //Delete a product
+    public function delete($id)
+    {
+        $this->Product->delete($id);
+
+        // Set message
+        $this->session->set_flashdata('product_deleted', 'Product has been removed successfully !');
+
+        redirect('products');
+    }
 }
 
 /* End of file products.php */

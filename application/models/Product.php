@@ -60,6 +60,18 @@ class Product extends CI_Model
         ));
         return $query->row_array();
     }
+
+    //Get input data and update a product
+    public function update()
+    {
+        $data = array(
+            'category_id' => $this->input->post('category_id'),
+            'product_name' => $this->input->post('product_name'),
+            'unit_price' => $this->input->post('unit_price'),
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('products', $data);
+    }
 }
 
 /* End of file Product.php */

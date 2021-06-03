@@ -56,6 +56,14 @@ class Products extends CI_Controller
         $data['product'] = $this->Product->edit($id);
         $this->render('templates/default', 'content', 'products/edit', $data);
     }
+
+    //Update a product
+    public function update()
+    {
+        $this->Product->update();
+        $this->session->set_flashdata('product_updated', 'Product has been updated successfully !');
+        redirect('products');
+    }
 }
 
 /* End of file products.php */

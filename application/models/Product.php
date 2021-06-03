@@ -21,6 +21,20 @@ class Product extends CI_Model
 
         return !empty($result) ? $result : false;
     }
+
+    // Insert a product
+    public function add()
+    {
+        //Product data array
+        $data = array(
+            'category_id' => $this->input->post('category_id'),
+            'product_name' => $this->input->post('product_name'),
+            'unit_price' => $this->input->post('unit_price'),
+        );
+
+        //Insert product category
+        return $this->db->insert('products', $data);
+    }
 }
 
 /* End of file Product.php */

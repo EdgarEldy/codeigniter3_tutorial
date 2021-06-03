@@ -51,6 +51,15 @@ class Product extends CI_Model
             return !empty($result) ? $result : false;
         }
     }
+
+    //Get product data by id to update
+    public function edit($id)
+    {
+        $query = $this->db->get_where('products', array(
+            'id' => $id
+        ));
+        return $query->row_array();
+    }
 }
 
 /* End of file Product.php */

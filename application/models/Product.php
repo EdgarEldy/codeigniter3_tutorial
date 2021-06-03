@@ -72,6 +72,14 @@ class Product extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('products', $data);
     }
+
+    //Delete a product 
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('products');
+        return true;
+    }
 }
 
 /* End of file Product.php */

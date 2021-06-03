@@ -43,7 +43,7 @@ class Product extends CI_Model
             $this->db->select('*');
             $this->db->from('categories');
             $this->db->join('products', 'categories.id = products.category_id', 'inner');
-            $this->db->where('products.category_id', $id);
+            $this->db->where('products.id', $id);
 
             $query = $this->db->get();
             $result = $query->row_array();

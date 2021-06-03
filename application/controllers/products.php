@@ -47,6 +47,15 @@ class Products extends CI_Controller
             return redirect('products');
         }
     }
+
+    //Getting products/edit view with products data
+    public function edit($id)
+    {
+        $data['category'] = $this->Product->getCategoryByProductId($id);
+        $data['categories'] = $this->Category->getCategories();
+        $data['product'] = $this->Product->edit($id);
+        $this->render('templates/default', 'content', 'products/edit', $data);
+    }
 }
 
 /* End of file products.php */

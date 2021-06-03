@@ -35,6 +35,22 @@ class Product extends CI_Model
         //Insert product category
         return $this->db->insert('products', $data);
     }
+
+    //Getting category by product id
+    public function getCategoryByProductId($id = '')
+    {
+        if ($id) {
+            $this->db->select('*');
+            $this->db->from('categories');
+            $this->db->join('products', 'categories.id = products.category_id', 'inner');
+            $this->db->where('products.category_id', $id);
+
+            $query = $this->db->get();
+            $result = $query->row_array();
+
+            return !empty($result) ? $result : false;
+        }
+    }
 }
 
 /* End of file Product.php */

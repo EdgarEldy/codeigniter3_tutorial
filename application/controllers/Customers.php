@@ -8,6 +8,8 @@ class Customers extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Customer');
+        
         //Do your magic here
     }
     

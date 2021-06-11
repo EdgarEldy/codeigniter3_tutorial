@@ -12,10 +12,12 @@ class Customers extends CI_Controller {
         
         //Do your magic here
     }
-    
+
+    //Show all customers
     public function index()
     {
-        
+        $data['customers'] = $this->Customer->getCustomers();
+        return $this->render('templates/default', 'content', 'customers/index', $data);
     }
 }
 

@@ -20,6 +20,22 @@ class Customer extends CI_Model
 
         return $query->result_array();
     }
+
+    // Insert a new customer
+    public function add()
+    {
+        //Customer data array
+        $data = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'tel' => $this->input->post('tel'),
+            'email' => $this->input->post('email'),
+            'address' => $this->input->post('address'),
+        );
+
+        //Insert a customer
+        return $this->db->insert('customers', $data);
+    }
 }
 
 /* End of file Customer.php */

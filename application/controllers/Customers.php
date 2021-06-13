@@ -52,6 +52,14 @@ class Customers extends CI_Controller {
         $data['customer'] = $this->Customer->edit($id);
         $this->render('templates/default', 'content', 'customers/edit', $data);
     }
+
+    //Update a customer
+    public function update()
+    {
+        $this->Customer->update();
+        $this->session->set_flashdata('customer_updated', 'Customer has been updated successfully !');
+        redirect('customers');
+    }
 }
 
 /* End of file Customers.php */

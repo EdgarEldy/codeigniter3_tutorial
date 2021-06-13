@@ -45,6 +45,13 @@ class Customers extends CI_Controller {
             return redirect('customers');
         }
     }
+
+    //Get customer's data and pass to the customers/edit view
+    public function edit($id)
+    {
+        $data['customer'] = $this->Customer->edit($id);
+        $this->render('templates/default', 'content', 'customers/edit', $data);
+    }
 }
 
 /* End of file Customers.php */

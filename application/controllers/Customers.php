@@ -60,6 +60,17 @@ class Customers extends CI_Controller {
         $this->session->set_flashdata('customer_updated', 'Customer has been updated successfully !');
         redirect('customers');
     }
+
+    //Delete a customer
+    public function delete($id)
+    {
+        $this->Customer->delete($id);
+
+        // Set flash message
+        $this->session->set_flashdata('customer_removed', 'Customer has been removed successfully !');
+
+        redirect('customers');
+    }
 }
 
 /* End of file Customers.php */

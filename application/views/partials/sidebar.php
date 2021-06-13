@@ -6,7 +6,7 @@
         <li><a href="#"><svg class="glyph stroked bag">
                     <use xlink:href="#stroked-bag"></use>
                 </svg> Orders</a></li>
-        <li><a href="#"><svg class="glyph stroked app-window-with-content">
+        <li><a href="<?= base_url('customers') ?>"><svg class="glyph stroked app-window-with-content">
                     <use xlink:href="#stroked-app-window-with-content"></use>
                 </svg> Customers</a></li>
         <li class="parent">

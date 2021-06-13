@@ -11,6 +11,11 @@
                 <?php if ($this->session->flashdata('customer_updated')) : ?>
                     <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('customer_updated') . '</p>'; ?>
                 <?php endif; ?>
+
+                <!-- customer_removed flash message -->
+                <?php if ($this->session->flashdata('customer_removed')) : ?>
+                    <?php echo '<p class="alert alert-danger w-100 h-100">' . $this->session->flashdata('customer_removed') . '</p>'; ?>
+                <?php endif; ?>
             </div>
             <a href="<?= base_url('customers/add') ?>" class="btn btn-primary">New</a>
             <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
@@ -38,7 +43,7 @@
                                 <div class="card-footer">
                                     <a href="<?= base_url('customers/edit/' . $customer['id']) ?>" class="btn btn-primary">Edit</a>
                                     <form action="<?= base_url('customers/delete/' . $customer['id']) ?>" method="post">
-                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this product customer ?')" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this customer ?')" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
                                 </div>
                             </td>

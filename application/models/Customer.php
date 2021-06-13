@@ -45,6 +45,20 @@ class Customer extends CI_Model
         ));
         return $query->row_array();
     }
+
+    //Get customer's data and update 
+    public function update()
+    {
+        $data = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'tel' => $this->input->post('tel'),
+            'email' => $this->input->post('email'),
+            'address' => $this->input->post('address'),
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('customers', $data);
+    }
 }
 
 /* End of file Customer.php */

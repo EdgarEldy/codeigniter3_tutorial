@@ -6,6 +6,11 @@
                 <?php if ($this->session->flashdata('customer_saved')) : ?>
                     <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('customer_saved') . '</p>'; ?>
                 <?php endif; ?>
+
+                <!-- Customer updated flash message -->
+                <?php if ($this->session->flashdata('customer_updated')) : ?>
+                    <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('customer_updated') . '</p>'; ?>
+                <?php endif; ?>
             </div>
             <a href="<?= base_url('customers/add') ?>" class="btn btn-primary">New</a>
             <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">

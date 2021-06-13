@@ -36,6 +36,15 @@ class Customer extends CI_Model
         //Insert a customer
         return $this->db->insert('customers', $data);
     }
+
+    //Get customer's data by id
+    public function edit($id)
+    {
+        $query = $this->db->get_where('customers', array(
+            'id' => $id
+        ));
+        return $query->row_array();
+    }
 }
 
 /* End of file Customer.php */

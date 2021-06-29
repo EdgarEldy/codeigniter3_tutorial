@@ -9,7 +9,7 @@ class Migration_Create_products_table extends CI_Migration
         $this->dbforge->add_field(array(
             'id' => array(
                 'type' => 'INT',
-                'constraint' => 11,
+                'constraint' => 5,
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ),
@@ -17,23 +17,21 @@ class Migration_Create_products_table extends CI_Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => TRUE
-            ),
+            ),        
             'product_name' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
             'unit_price' => array(
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => TRUE
+                'type' => 'FLOAT',
             ),
             'created_at' => array(
                 'type' => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
             ),
-            'updated_at' => array(
+            'modified_at' => array(
                 'type' => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
-
             ),
+
         ));
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('products');

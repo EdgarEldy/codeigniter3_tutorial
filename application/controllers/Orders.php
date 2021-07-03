@@ -11,6 +11,7 @@ class Orders extends CI_Controller
         parent::__construct();
         $this->load->model('Order');
         $this->load->model('Customer');
+        $this->load->model('Product');
         
         //Do your magic here
     }

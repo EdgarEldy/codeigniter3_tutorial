@@ -9,6 +9,8 @@ class Orders extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Order');
+        
         //Do your magic here
     }
     

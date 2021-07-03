@@ -10,6 +10,7 @@ class Orders extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Order');
+        $this->load->model('Customer');
         
         //Do your magic here
     }

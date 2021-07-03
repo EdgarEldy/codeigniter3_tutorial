@@ -3,7 +3,7 @@
         <li class="active"><a href="/"><svg class="glyph stroked dashboard-dial">
                     <use xlink:href="#stroked-dashboard-dial"></use>
                 </svg> Home</a></li>
-        <li><a href="#"><svg class="glyph stroked bag">
+        <li><a href="<?= base_url('orders') ?>"><svg class="glyph stroked bag">
                     <use xlink:href="#stroked-bag"></use>
                 </svg> Orders</a></li>
         <li><a href="<?= base_url('customers') ?>"><svg class="glyph stroked app-window-with-content">

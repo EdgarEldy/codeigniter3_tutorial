@@ -12,6 +12,7 @@ class Orders extends CI_Controller
         $this->load->model('Order');
         $this->load->model('Customer');
         $this->load->model('Product');
+        $this->load->model('Category');
 
         //Do your magic here
     }
@@ -22,6 +23,13 @@ class Orders extends CI_Controller
     {
         $data['orders'] = $this->Order->getOrders();
         return $this->render('templates/default', 'content', 'orders/index', $data);
+    }
+
+    public function add()
+    {
+        $data['customers'] = $this->Customer->getCustomers();
+        $data['categories'] = $this->Category->getCategories();
+        return $this->render('templates/default','content','orders/add', $data);
     }
 }
 

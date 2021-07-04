@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">Orders</div>
         <div class="panel-body">
-            <a href="#" class="btn btn-primary">New</a>
+            <a href="<?= base_url('orders/add') ?>" class="btn btn-primary">New</a>
             <?php if (!empty($orders)) : ?>
                 <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                     <thead>

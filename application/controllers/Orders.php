@@ -12,6 +12,8 @@ class Orders extends CI_Controller
         $this->load->model('Order');
         $this->load->model('Customer');
         $this->load->model('Product');
+        $this->load->model('Category');
+        
 
         //Do your magic here
     }

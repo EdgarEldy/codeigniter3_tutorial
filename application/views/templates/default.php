@@ -24,6 +24,10 @@
     <script src="<?= base_url('assets/js/bootstrap-table.js') ?>"></script>
     <script src="<?= base_url('assets/js/global.js') ?>"></script>
     <script src="<?= base_url('assets/js/fontawesome.min.js') ?>"></script>
+
+    <!-- main.js -->
+    <script src="<?= base_url('assets/js/main.js') ?>"></script>
+    <!-- End of main.js -->
     <script>
         ! function($) {
             $(document).on("click", "ul.nav li.parent > a > span.icon", function() {

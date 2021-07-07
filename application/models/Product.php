@@ -96,6 +96,22 @@ class Product extends CI_Model
             return !empty($result) ? $result : false;
         }
     }
+
+    //Get unit price by product id query
+    public function getUnitPriceByProductId($id = '')
+    {
+        if ($id) {
+            $this->db->select('*');
+            $this->db->from('categories');
+            $this->db->join('products', 'categories.id = products.category_id', 'inner');
+            $this->db->where('products.id', $id);
+
+            $query = $this->db->get();
+            $result = $query->row_array();
+
+            return !empty($result) ? $result : false;
+        }
+    }
 }
 
 /* End of file Product.php */

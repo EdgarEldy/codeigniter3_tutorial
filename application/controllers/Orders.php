@@ -41,7 +41,7 @@ class Orders extends CI_Controller
         $this->form_validation->set_rules('product_id', 'Product id', 'required');
         $this->form_validation->set_rules('qty', 'Quantity', 'required');
         $this->form_validation->set_rules('unit_price', 'Unit price', 'required');
-        $this->form_validation->set_rules('total', 'Total', 'required');
+        $this->form_validation->set_rules('grand_total', 'Total', 'required');
 
 
         if ($this->form_validation->run() == FALSE) {

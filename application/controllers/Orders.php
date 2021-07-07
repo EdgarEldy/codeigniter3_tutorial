@@ -57,6 +57,15 @@ class Orders extends CI_Controller
             return redirect('orders');
         }
     }
+
+    //Get products by category id function
+    public function getProducts()
+    {
+            $id = $this->input->get('cat_id');
+            $data['products'] = $this->Product->getProductsByCategoryId($id);
+
+            $this->load->view('orders/getProducts', $data);
+    }
 }
 
 /* End of file Orders.php */

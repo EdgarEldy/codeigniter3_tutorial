@@ -66,6 +66,15 @@ class Orders extends CI_Controller
 
             $this->load->view('orders/getProducts', $data);
     }
+
+    //Get unit price by product id function
+    public function getUnitPrice()
+    {
+        $product_id = $this->input->get('product_id');
+        $data['product'] = $this->Product->getUnitPriceByProductId($product_id);
+
+        $this->load->view('orders/getUnitPrice', $data);
+    }
 }
 
 /* End of file Orders.php */

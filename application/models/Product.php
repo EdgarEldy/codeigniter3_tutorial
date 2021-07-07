@@ -80,6 +80,22 @@ class Product extends CI_Model
         $this->db->delete('products');
         return true;
     }
+
+    //Get products by category id
+    public function getProductsByCategoryId($id = '')
+    {
+        if ($id) {
+            $this->db->select('*');
+            $this->db->from('categories');
+            $this->db->join('products', 'categories.id = products.category_id', 'inner');
+            $this->db->where('categories.id', $id);
+
+            $query = $this->db->get();
+            $result = $query->result_array();
+
+            return !empty($result) ? $result : false;
+        }
+    }
 }
 
 /* End of file Product.php */

@@ -40,6 +40,22 @@ class Order extends CI_Model
         //Insert order
         return $this->db->insert('orders', $data);
     }
+
+    //Getting customer's name by order id
+    public function getCustomerByOrderId($id = '')
+    {
+        if ($id) {
+            $this->db->select('*');
+            $this->db->from('customers');
+            $this->db->join('orders', 'customers.id = orders.customer_id', 'inner');
+            $this->db->where('orders.id', $id);
+
+            $query = $this->db->get();
+            $result = $query->row_array();
+
+            return !empty($result) ? $result : false;
+        }
+    }
 }
 
 /* End of file Order.php */

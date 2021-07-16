@@ -98,6 +98,19 @@ class Order extends CI_Model
         ));
         return $query->row_array();
     }
+
+    //Get input data and update order
+    public function update()
+    {
+        $data = array(
+            'customer_id' => $this->input->post('customer_id'),
+            'product_id' => $this->input->post('product_id'),
+            'qty' => $this->input->post('qty'),
+            'grand_total' => $this->input->post('grand_total'),
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('orders', $data);
+    }
 }
 
 /* End of file Order.php */

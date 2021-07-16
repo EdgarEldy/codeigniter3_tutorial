@@ -115,6 +115,17 @@ class Orders extends CI_Controller
             return redirect('orders');
         }
     }
+
+    //Delete an order
+    public function delete($id)
+    {
+        $this->Order->delete($id);
+
+        // Set message
+        $this->session->set_flashdata('order_deleted', 'Order has been removed successfully !');
+
+        redirect('orders');
+    }
 }
 
 /* End of file Orders.php */

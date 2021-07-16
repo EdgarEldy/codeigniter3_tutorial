@@ -111,6 +111,14 @@ class Order extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('orders', $data);
     }
+
+    //Delete order query 
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('orders');
+        return true;
+    }
 }
 
 /* End of file Order.php */

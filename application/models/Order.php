@@ -89,6 +89,15 @@ class Order extends CI_Model
             return !empty($result) ? $result : false;
         }
     }
+
+    //Get orders data to update
+    public function edit($id)
+    {
+        $query = $this->db->get_where('orders', array(
+            'id' => $id
+        ));
+        return $query->row_array();
+    }
 }
 
 /* End of file Order.php */

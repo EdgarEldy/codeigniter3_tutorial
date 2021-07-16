@@ -75,6 +75,19 @@ class Orders extends CI_Controller
 
         $this->load->view('orders/getUnitPrice', $data);
     }
+
+    //Getting orders/edit view with data
+    public function edit($id)
+    {
+        $data['customers'] = $this->Customer->getCustomers(); //Get customers
+        $data['products'] = $this->Product->getProducts(); //Get products
+        $data['categories'] = $this->Category->getCategories(); //Get products
+        $data['customer'] = $this->Order->getCustomerByOrderId($id); //get customer by order id
+        $data['product'] = $this->Order->getProductByOrderId($id); //Get product name by order id
+        $data['category'] = $this->Order->getCategoryByOrderId($id); //Get category name by order id
+        $data['order'] = $this->Order->edit($id); //Get order data 
+        $this->render('templates/default', 'content', 'orders/edit', $data);
+    }
 }
 
 /* End of file Orders.php */

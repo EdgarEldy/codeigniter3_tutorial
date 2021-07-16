@@ -56,6 +56,22 @@ class Order extends CI_Model
             return !empty($result) ? $result : false;
         }
     }
+
+    //Getting product name by order id
+    public function getProductByOrderId($id = '')
+    {
+        if ($id) {
+            $this->db->select('*');
+            $this->db->from('products');
+            $this->db->join('orders', 'products.id = orders.product_id', 'inner');
+            $this->db->where('orders.id', $id);
+
+            $query = $this->db->get();
+            $result = $query->row_array();
+
+            return !empty($result) ? $result : false;
+        }
+    }
 }
 
 /* End of file Order.php */

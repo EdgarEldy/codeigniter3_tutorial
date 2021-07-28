@@ -2,6 +2,9 @@
     <div class="panel panel-default">
         <div class="panel-heading">Product categories</div>
         <div class="panel-body">
+            <?php if ($this->session->flashdata('category_saved')) : ?>
+                <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('category_saved') . '</p>'; ?>
+            <?php endif; ?>
             <a href="<?= base_url('categories/add') ?>" class="btn btn-primary">New</a>
             <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                 <thead>

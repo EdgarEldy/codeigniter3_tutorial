@@ -4,6 +4,8 @@
         <div class="panel-body">
             <?php if ($this->session->flashdata('product_saved')) : ?>
                 <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('product_saved') . '</p>'; ?>
+            <?php elseif ($this->session->flashdata('product_updated')) : ?>
+                <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('product_updated') . '</p>'; ?>
             <?php endif; ?>
             <a href="<?= base_url('products/add') ?>" class="btn btn-primary">New</a>
             <?php if (!empty($products)) : ?>

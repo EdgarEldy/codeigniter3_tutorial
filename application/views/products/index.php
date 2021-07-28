@@ -6,6 +6,8 @@
                 <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('product_saved') . '</p>'; ?>
             <?php elseif ($this->session->flashdata('product_updated')) : ?>
                 <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('product_updated') . '</p>'; ?>
+            <?php elseif ($this->session->flashdata('product_deleted')) : ?>
+                <?php echo '<p class="alert alert-danger w-100 h-100">' . $this->session->flashdata('product_deleted') . '</p>'; ?>
             <?php endif; ?>
             <a href="<?= base_url('products/add') ?>" class="btn btn-primary">New</a>
             <?php if (!empty($products)) : ?>

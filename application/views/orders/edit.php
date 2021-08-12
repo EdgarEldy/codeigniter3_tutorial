@@ -8,7 +8,10 @@
                       <div class="form-group">
                           <label>Customer :</label>
                           <select name="customer_id" id="" class="form-control">
-                              <option value="">Select a customer...</option>
+                          <option value="<?= $customer['customer_id'] ?>"><?= $customer['first_name'] . ' ' . $customer['last_name'] ?></option>
+                            <option value="" class="bolden">
+                                <h1>Select a customer...</h1>
+                            </option>
                               <?php foreach ($customers as $customer) : ?>
                                   <option value="<?= $customer['id'] ?>"><?= $customer['first_name'] . ' ' . $customer['last_name'] ?></option>
                               <?php endforeach ?>

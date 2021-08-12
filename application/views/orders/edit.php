@@ -21,7 +21,10 @@
                       <div class="form-group">
                           <label>Product category :</label>
                           <select name="category_id" id="cat_id" class="form-control">
-                              <option value="">Select a category...</option>
+                          <option value="<?= $category['category_id'] ?>"><?= $category['category_name'] ?></option>
+                            <option value="" class="bolden">
+                                <h1>Select a category...</h1>
+                            </option>
                               <?php foreach ($categories as $category) : ?>
                                   <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
                               <?php endforeach ?>

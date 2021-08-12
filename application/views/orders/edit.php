@@ -38,6 +38,9 @@
                               <option value="" class="bolden">
                                   <h1>Select a product...</h1>
                               </option>
+                              <?php foreach ($products as $product) : ?>
+                                  <option value="<?= $product['id'] ?>"><?= $product['product_name'] ?></option>
+                              <?php endforeach ?>
                           </select>
                           <?= form_error('product_id', '<p class="alert alert-danger">', '</p>') ?>
                       </div>

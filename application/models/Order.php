@@ -16,9 +16,10 @@ class Order extends CI_Model
     public function getOrders()
     {
         $this->db->select('*');
-        $this->db->from('orders');
-        $this->db->join('customers', 'orders.customer_id = customers.id', 'inner');
+        $this->db->from('customers');
+        $this->db->join('orders', 'orders.customer_id = customers.id', 'inner');
         $this->db->join('products', 'orders.product_id = products.id', 'inner');
+        $this->db->select('orders.*, orders.id as order_id');
         $query = $this->db->get();
 
         $result = $query->result_array();

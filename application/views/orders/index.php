@@ -36,8 +36,8 @@
                                 <td><?= $order['grand_total'] ?></td>
                                 <td>
                                     <div class="card-footer">
-                                        <a href="<?= base_url('orders/edit/' . $order['id']) ?>" class="btn btn-primary">Edit</a>
-                                        <form action="<?= base_url('orders/delete/' . $order['id']) ?>" method="post">
+                                        <a href="<?= base_url('orders/edit/' . $order['order_id']) ?>" class="btn btn-primary">Edit</a>
+                                        <form action="<?= base_url('orders/delete/' . $order['order_id']) ?>" method="post">
                                             <button type="submit" onclick="return confirm('Are you sure you want to delete this order ?')" class="btn btn-danger btn-sm">Delete</button>
                                         </form>
 

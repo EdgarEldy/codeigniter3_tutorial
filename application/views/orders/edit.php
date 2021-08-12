@@ -8,7 +8,10 @@
                       <div class="form-group">
                           <label>Customer :</label>
                           <select name="customer_id" id="" class="form-control">
-                              <option value="">Select a customer...</option>
+                          <option value="<?= $customer['customer_id'] ?>"><?= $customer['first_name'] . ' ' . $customer['last_name'] ?></option>
+                            <option value="" class="bolden">
+                                <h1>Select a customer...</h1>
+                            </option>
                               <?php foreach ($customers as $customer) : ?>
                                   <option value="<?= $customer['id'] ?>"><?= $customer['first_name'] . ' ' . $customer['last_name'] ?></option>
                               <?php endforeach ?>
@@ -18,7 +21,10 @@
                       <div class="form-group">
                           <label>Product category :</label>
                           <select name="category_id" id="cat_id" class="form-control">
-                              <option value="">Select a category...</option>
+                          <option value="<?= $category['category_id'] ?>"><?= $category['category_name'] ?></option>
+                            <option value="" class="bolden">
+                                <h1>Select a category...</h1>
+                            </option>
                               <?php foreach ($categories as $category) : ?>
                                   <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
                               <?php endforeach ?>
@@ -32,6 +38,9 @@
                               <option value="" class="bolden">
                                   <h1>Select a product...</h1>
                               </option>
+                              <?php foreach ($products as $product) : ?>
+                                  <option value="<?= $product['id'] ?>"><?= $product['product_name'] ?></option>
+                              <?php endforeach ?>
                           </select>
                           <?= form_error('product_id', '<p class="alert alert-danger">', '</p>') ?>
                       </div>

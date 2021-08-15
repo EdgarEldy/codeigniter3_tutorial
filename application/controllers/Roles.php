@@ -15,7 +15,8 @@ class Roles extends CI_Controller {
     
     public function index()
     {
-        
+        $data['roles'] = $this->Role->getRoles();
+        return $this->render('templates/default', 'content', 'roles/index', $data);
     }
 
 }

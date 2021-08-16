@@ -52,6 +52,14 @@ class Role extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $this->db->update('roles', $data);
     }
+
+    //Delete a role
+    public function delete($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('roles');
+        return true;
+    }
 }
 
 /* End of file Role.php */

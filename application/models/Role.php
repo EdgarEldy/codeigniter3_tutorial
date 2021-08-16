@@ -42,6 +42,16 @@ class Role extends CI_Model
         ));
         return $query->row_array();
     }
+
+    //Update a role
+    public function update()
+    {
+        $data = array(
+            'role_name' => $this->input->post('role_name')
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update('roles', $data);
+    }
 }
 
 /* End of file Role.php */

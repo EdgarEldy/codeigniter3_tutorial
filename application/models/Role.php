@@ -21,6 +21,18 @@ class Role extends CI_Model
 
         return $query->result_array();
     }
+
+    // Insert a role
+    public function add()
+    {
+        //Role data array
+        $data = array(
+            'role_name' => $this->input->post('role_name')
+        );
+
+        //Insert role
+        return $this->db->insert('roles', $data);
+    }
 }
 
 /* End of file Role.php */

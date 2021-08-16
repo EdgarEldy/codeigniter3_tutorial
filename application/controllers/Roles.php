@@ -47,6 +47,14 @@ class Roles extends CI_Controller {
         $this->render('templates/default', 'content', 'roles/edit', $data);
     }
 
+    //Update a role
+    public function update()
+    {
+        $this->Role->update();
+        $this->session->set_flashdata('role_updated', 'Role has been updated successfully !');
+        redirect('roles');
+    }
+
 }
 
 /* End of file Roles.php */

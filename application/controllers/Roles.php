@@ -40,6 +40,13 @@ class Roles extends CI_Controller {
         }
     }
 
+    //Show the form for editing a role
+    public function edit($id)
+    {
+        $data['role'] = $this->Role->edit($id);
+        $this->render('templates/default', 'content', 'roles/edit', $data);
+    }
+
 }
 
 /* End of file Roles.php */

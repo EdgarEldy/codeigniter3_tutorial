@@ -19,6 +19,27 @@ class Roles extends CI_Controller {
         return $this->render('templates/default', 'content', 'roles/index', $data);
     }
 
+    //Add a role
+    public function add()
+    {
+        //Setting validation rules
+        $this->form_validation->set_rules('role_name', 'Role name', 'required');
+
+
+        if ($this->form_validation->run() == FALSE) {
+            return $this->render('templates/default', 'content', 'roles/add');
+        } else {
+            //Save role
+            $this->Role->add();
+
+            //Set flash message
+            $this->session->set_flashdata('role_saved', 'Role has been saved successfully !');
+
+            //Load roles/index view
+            return redirect('roles');
+        }
+    }
+
 }
 
 /* End of file Roles.php */

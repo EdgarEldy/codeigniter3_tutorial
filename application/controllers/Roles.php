@@ -55,6 +55,17 @@ class Roles extends CI_Controller {
         redirect('roles');
     }
 
+    //Delete a role
+    public function delete($id)
+    {
+        $this->Role->delete($id);
+
+        // Set message
+        $this->session->set_flashdata('role_deleted', 'Role has been removed successfully !');
+
+        redirect('roles');
+    }
+
 }
 
 /* End of file Roles.php */

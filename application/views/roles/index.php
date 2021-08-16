@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">Product roles</div>
         <div class="panel-body">
-            <a href="#<?= base_url('categories/add') ?>" class="btn btn-primary">New</a>
+            <a href="<?= base_url('roles/add') ?>" class="btn btn-primary">New</a>
             <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
                 <thead>
                     <tr>

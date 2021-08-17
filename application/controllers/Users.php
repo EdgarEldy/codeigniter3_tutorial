@@ -13,6 +13,9 @@ class User extends CI_Controller {
         //Load Role Model
         $this->load->model('Role');
         
+        //Load User Model
+        $this->load->model('User');
+        
         //Do your magic here
     }
     

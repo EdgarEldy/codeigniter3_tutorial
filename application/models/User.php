@@ -1,15 +1,28 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Model {
+class User extends CI_Model
+{
 
 //Constructor
-public function __construct()
-{
-    parent::__construct();
-    //Do your magic here
-}
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+	}
+
+//Getting users with their respective roles query
+	public function getUsers()
+	{
+		$this->db->select('*');
+		$this->db->from('roles');
+		$this->db->join('users', 'roles.id = users.role_id', 'inner');
+		$query = $this->db->get();
+		$result = $query->result_array();
+
+		return !empty($result) ? $result : false;
+	}
 
 }
 

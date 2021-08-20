@@ -66,6 +66,46 @@ class Users extends CI_Controller
 			}
 		}
 	}
+
+	// Authenticate user
+	public function login()
+	{
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+		if ($this->form_validation->run() === FALSE) {
+			$this->load->view('users/login');
+		} else {
+
+			// Get email
+			$email = $this->input->post('email');
+			// Get and encrypt the password
+			$password = md5($this->input->post('password'));
+
+			// Login user
+			$user_id = $this->User->login($email, $password);
+
+			if ($user_id) {
+				// Create session
+				$data = array(
+					'user_id' => $user_id,
+					'email' => $email,
+					'connected' => true
+				);
+
+				$this->session->set_userdata($data);
+
+				// Set message
+				$this->session->set_flashdata('user_loggedin', 'You are now logged in');
+
+				redirect('home');
+			} else {
+				// Set message
+				$this->session->set_flashdata('login_failed', 'Connection failed ! Try again !');
+				$this->load->view('users/login');
+			}
+		}
+	}
 }
 
 /* End of file User.php */

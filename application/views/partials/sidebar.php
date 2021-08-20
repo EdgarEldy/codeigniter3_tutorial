@@ -59,7 +59,7 @@
                 </li>
             </ul>
         </li>
-        <li><a href="#">
+        <li><a href="<?= base_url('users/logout') ?>">
                 <svg class="glyph stroked male-user">
                     <use xlink:href="#stroked-cancel"></use>
                 </svg> Logout</a>

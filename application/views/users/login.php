@@ -9,6 +9,9 @@
               <div class="login-panel panel panel-default">
                   <div class="panel-heading">CODEIGNITER 3 TUTORIAL | Authentification </div>
                   <div class="panel-body">
+                      <?php if ($this->session->flashdata('login_failed')) : ?>
+                          <?php echo '<p class="alert alert-danger w-100 h-100">' . $this->session->flashdata('login_failed') . '</p>'; ?>
+                      <?php endif; ?>
                       <form role="form" action="<?= base_url('users/login') ?>" method="post">
                           <fieldset>
                               <div class="form-group">

@@ -19,9 +19,10 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><svg class="glyph stroked male-user">
                                     <use xlink:href="#stroked-male-user"></use>
+                                    <?= $this->session->userdata['first_name'] ?>
                                 </svg>
                             </a></li>
-                        <li><a href="#"><svg class="glyph stroked cancel">
+                        <li><a href="<?= base_url('users/logout') ?>"><svg class="glyph stroked cancel">
                                     <use xlink:href="#stroked-cancel"></use>
                                 </svg> Logout</a></li>
                     </ul>

@@ -52,17 +52,20 @@ class Users extends CI_Controller
 			);
 
 			//Save user
-			$this->User->add($data);
+			if ($this->User->add($data)) {
 
-			//Set flash message
-			$this->session->set_flashdata('user_saved', 'User has been saved successfully !');
-
-			//Load users/index view
-			return redirect('users');
+				//Set flash message if user saved successfully
+				$this->session->set_flashdata('user_saved', 'User has been saved successfully !');
+				return redirect('users');
+			}
+			else {
+				//Set flash message if user registration failed
+				$this->session->set_flashdata('user_failed', 'User registration failed ! Try again !');
+				return $this->render('templates/default', 'content', 'users/add');
+				
+			}
 		}
 	}
-
-
 }
 
 /* End of file User.php */

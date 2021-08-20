@@ -47,6 +47,16 @@ class User extends CI_Model
 		}
 	}
 
+	//Get user by first name
+	public function get_user_by_firstname($id)
+	{
+		$this->db->select('first_name');
+		$this->db->where('id', $id);
+		$query = $this->db->get('users');
+		$d = array_shift($query->result_array());
+		return $d['first_name'];
+	}
+
 }
 
 /* End of file User.php */

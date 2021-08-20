@@ -42,8 +42,17 @@ class Users extends CI_Controller
 			return $this->render('templates/default', 'content', 'users/add', $data);
 		} else {
 
+			//get user data array
+			$data = array(
+				'role_id' => $this->input->post('role_id'),
+				'first_name' => $this->input->post('first_name'),
+				'last_name' => $this->input->post('last_name'),
+				'email' => $this->input->post('email'),
+				'password' => md5($this->input->post('password')),
+			);
+
 			//Save user
-			$this->User->add();
+			$this->User->add($data);
 
 			//Set flash message
 			$this->session->set_flashdata('user_saved', 'User has been saved successfully !');

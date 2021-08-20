@@ -103,13 +103,24 @@ class Users extends CI_Controller
 				// Set message
 				$this->session->set_flashdata('user_loggedin', 'You are now logged in');
 
-				redirect('home');
+				redirect('/');
 			} else {
 				// Set message
 				$this->session->set_flashdata('login_failed', 'Connection failed ! Try again !');
 				$this->load->view('users/login');
 			}
 		}
+	}
+
+	// Log user out
+	public function logout()
+	{
+		// Unset user data
+		$this->session->unset_userdata('connected');
+		$this->session->unset_userdata('user_id');
+		$this->session->unset_userdata('email');
+
+		redirect('users/login');
 	}
 }
 

@@ -86,9 +86,14 @@ class Users extends CI_Controller
 			$user_id = $this->User->login($email, $password);
 
 			if ($user_id) {
+
+				//get first name of customer
+				$first_name = $this->User->get_user_by_firstname($user_id)[0];
+
 				// Create session
 				$data = array(
 					'user_id' => $user_id,
+					'first_name' => $first_name,
 					'email' => $email,
 					'connected' => true
 				);

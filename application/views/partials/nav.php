@@ -19,6 +19,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><svg class="glyph stroked male-user">
                                     <use xlink:href="#stroked-male-user"></use>
+                                    <?= $this->session->userdata['first_name'] ?>
                                 </svg>
                             </a></li>
                         <li><a href="#"><svg class="glyph stroked cancel">

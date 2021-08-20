@@ -24,6 +24,22 @@ class User extends CI_Model
 		return !empty($result) ? $result : false;
 	}
 
+	// Insert a user query
+	public function add()
+	{
+		//Product data array
+		$data = array(
+			'role_id' => $this->input->post('role_id'),
+			'first_name' => $this->input->post('first_name'),
+			'last_name' => $this->input->post('last_name'),
+			'email' => $this->input->post('email'),
+			'password' => $this->input->post('password'),
+		);
+
+		//Insert product category
+		return $this->db->insert('users', $data);
+	}
+
 }
 
 /* End of file User.php */

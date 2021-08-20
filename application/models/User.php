@@ -25,18 +25,9 @@ class User extends CI_Model
 	}
 
 	// Insert a user query
-	public function add()
+	public function add($data)
 	{
-		//Product data array
-		$data = array(
-			'role_id' => $this->input->post('role_id'),
-			'first_name' => $this->input->post('first_name'),
-			'last_name' => $this->input->post('last_name'),
-			'email' => $this->input->post('email'),
-			'password' => $this->input->post('password'),
-		);
-
-		//Insert product category
+		//Insert user
 		return $this->db->insert('users', $data);
 	}
 

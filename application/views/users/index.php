@@ -31,6 +31,7 @@
                                 <td>
                                     <div class="card-footer">
                                         <form action="<?= base_url('users/delete/' . $user['id']) ?>" method="post">
+                                            <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                             <button type="submit" onclick="return confirm('Are you sure you want to deactivate this user ?')" class="btn btn-danger btn-sm">Deactivate</button>
                                         </form>
 

@@ -4,6 +4,8 @@
         <div class="panel-body">
             <?php if ($this->session->flashdata('user_saved')) : ?>
                 <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('user_saved') . '</p>'; ?>
+            <?php elseif ($this->session->flashdata('user_deactivated')) : ?>
+                <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('user_deactivated') . '</p>'; ?>
             <?php endif; ?>
             <a href="<?= base_url('users/add') ?>" class="btn btn-primary">New</a>
             <?php if (!empty($users)) : ?>

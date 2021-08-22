@@ -57,6 +57,16 @@ class User extends CI_Model
 		return $d['first_name'];
 	}
 
+	//Deactivate a user query
+	public function deactivate()
+	{
+		$data = array(
+			'active' => 0
+		);
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('users', $data);
+	}
+
 }
 
 /* End of file User.php */

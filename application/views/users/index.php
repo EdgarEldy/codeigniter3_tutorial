@@ -2,6 +2,9 @@
     <div class="panel panel-default">
         <div class="panel-heading">Users</div>
         <div class="panel-body">
+            <?php if ($this->session->flashdata('user_saved')) : ?>
+                <?php echo '<p class="alert alert-success w-100 h-100">' . $this->session->flashdata('user_saved') . '</p>'; ?>
+            <?php endif; ?>
             <a href="<?= base_url('users/add') ?>" class="btn btn-primary">New</a>
             <?php if (!empty($users)) : ?>
                 <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">

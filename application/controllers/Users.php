@@ -123,6 +123,17 @@ class Users extends CI_Controller
 
 		redirect('users/login');
 	}
+
+	//Deactivate user
+	public function delete()
+	{
+		$this->User->deactivate();
+
+		// Set message
+		$this->session->set_flashdata('user_deactivated', 'User has been deactivated successfully !');
+
+		redirect('users');
+	}
 }
 
 /* End of file User.php */

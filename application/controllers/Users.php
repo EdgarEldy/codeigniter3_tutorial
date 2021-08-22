@@ -49,6 +49,7 @@ class Users extends CI_Controller
 				'last_name' => $this->input->post('last_name'),
 				'email' => $this->input->post('email'),
 				'password' => md5($this->input->post('password')),
+				'active' => 1
 			);
 
 			//Save user
@@ -121,6 +122,17 @@ class Users extends CI_Controller
 		$this->session->unset_userdata('email');
 
 		redirect('users/login');
+	}
+
+	//Deactivate user
+	public function delete()
+	{
+		$this->User->deactivate();
+
+		// Set message
+		$this->session->set_flashdata('user_deactivated', 'User has been deactivated successfully !');
+
+		redirect('users');
 	}
 }
 

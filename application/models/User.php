@@ -18,6 +18,8 @@ class User extends CI_Model
 		$this->db->select('*');
 		$this->db->from('roles');
 		$this->db->join('users', 'roles.id = users.role_id', 'inner');
+		$this->db->where('users.active', 1);
+		
 		$query = $this->db->get();
 		$result = $query->result_array();
 
@@ -55,6 +57,16 @@ class User extends CI_Model
 		$query = $this->db->get('users');
 		$d = array_shift($query->result_array());
 		return $d['first_name'];
+	}
+
+	//Deactivate a user query
+	public function deactivate()
+	{
+		$data = array(
+			'active' => 0
+		);
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('users', $data);
 	}
 
 }

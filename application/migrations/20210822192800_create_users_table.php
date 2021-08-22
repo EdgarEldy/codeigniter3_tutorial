@@ -34,6 +34,9 @@ class Migration_Create_users_table extends CI_Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ),
+            'active' => array(
+                'type' => 'BOOLEAN',    
+            ),
             'created_at' => array(
                 'type' => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
             ),
